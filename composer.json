@@ -1,0 +1,45 @@
+{
+    "name": "justoverclock/last-registered-users",
+    "description": "Last Registered users widget for Flarum",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.0.0",
+        "afrux/forum-widgets-core": "^0.1.0"
+    },
+    "require-dev": {
+        "flarum/testing": "^1.0.0"
+    },
+    "authors": [
+        {
+            "name": "Marco Colia",
+            "email": "info@flarum.it",
+            "role": "Developer"
+        }
+    ],
+    "funding": [
+        {
+            "type": "website",
+            "url": "https://www.paypal.com/donate?hosted_button_id=25WSH565TJCLE"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Justoverclock\\LastRegisteredUsers\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Last Registered Users",
+            "category": "",
+            "icon": {
+                "name": "fas fa-calendar-day",
+                "backgroundColor": "blue",
+                "color": "white"
+            }
+        }
+    }
+}
