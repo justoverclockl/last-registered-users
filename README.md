@@ -19,12 +19,11 @@ composer require justoverclock/last-registered-users:"*"
 
 ```sh
 composer update justoverclock/last-registered-users:"*"
-php flarum migrate
 php flarum cache:clear
 ```
 
 ## Links
 
 - [Packagist](https://packagist.org/packages/justoverclock/last-registered-users)
-- [GitHub](https://github.com/justoverclock/last-registered-users)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [GitHub](https://github.com/justoverclockl/last-registered-users)
+- [Discuss](https://flarum.it/d/175-widget-ultimi-utenti-registrati)
