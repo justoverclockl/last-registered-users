@@ -12,6 +12,7 @@ import Widget from 'flarum/extensions/afrux-forum-widgets-core/common/components
 import app from 'flarum/forum/app';
 import LoadingIndicator from 'flarum/common/components/LoadingIndicator';
 import avatar from 'flarum/common/helpers/avatar';
+import Tooltip from 'flarum/common/components/Tooltip';
 
 export default class LastRegisteredUsersWidget extends Widget {
     oninit(vnode) {
@@ -57,12 +58,15 @@ export default class LastRegisteredUsersWidget extends Widget {
         }
         return (
             <div className="last-registered-users">
+                <p class="welcomeText">A great welcome to our newest member:</p>
                 {
                     <ul className="lastreguser fa-ul">
                         {this.lastRegisteredUsers.map((user) => {
                             return (
                                 <li class="lastreguswdg">
-                                    <div class="lastregAvatar">{avatar(user)}</div>
+                                    <div class="lastregAvatar">
+                                        <Tooltip text={user.displayName()}>{avatar(user)}</Tooltip>
+                                    </div>
                                     <a href={app.route.user(user)} class="lastreglink">
                                         <strong>{user.username()}</strong>
                                     </a>
