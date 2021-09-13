@@ -235,7 +235,7 @@ var LastRegisteredUsersWidget = /*#__PURE__*/function (_Widget) {
     var _this = this;
 
     // settings to limit registered users on frontend
-    var usersToShow = flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('justoverclock-last-registered-users.showLastUsers') || 2; // get posts json
+    var usersToShow = flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default.a.forum.attribute('justoverclock-last-registered-users.showLastUsers') || 2; // get users json
 
     var RecentUsers = flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default.a.store.find('users', {
       isEmailConfirmed: false,
@@ -258,12 +258,12 @@ var LastRegisteredUsersWidget = /*#__PURE__*/function (_Widget) {
   _proto.icon = function icon() {
     // Widget icon.
     return 'fas fa-users';
-  };
-
-  _proto.title = function title() {
-    // Widget title.
-    return flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default.a.translator.trans('justoverclock-last-registered-users.forum.widget-title');
-  };
+  }
+  /*    title() {
+      // Widget title.
+      return app.translator.trans('justoverclock-last-registered-users.forum.widget-title');
+  }*/
+  ;
 
   _proto.content = function content() {
     if (this.loading) {
@@ -272,9 +272,11 @@ var LastRegisteredUsersWidget = /*#__PURE__*/function (_Widget) {
 
     return m("div", {
       className: "last-registered-users"
+    }, m("div", {
+      "class": "welcomeText"
     }, m("p", {
       "class": "welcomeText"
-    }, "A great welcome to our newest member:"), m("ul", {
+    }, flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default.a.translator.trans('justoverclock-last-registered-users.forum.welcomeText') + ': ')), m("ul", {
       className: "lastreguser fa-ul"
     }, this.lastRegisteredUsers.map(function (user) {
       return m("li", {

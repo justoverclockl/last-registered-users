@@ -23,7 +23,7 @@ export default class LastRegisteredUsersWidget extends Widget {
     oncreate(vnode) {
         // settings to limit registered users on frontend
         const usersToShow = app.forum.attribute('justoverclock-last-registered-users.showLastUsers') || 2;
-        // get posts json
+        // get users json
         const RecentUsers = app.store
             .find('users', {
                 isEmailConfirmed: false,
@@ -47,10 +47,10 @@ export default class LastRegisteredUsersWidget extends Widget {
         return 'fas fa-users';
     }
 
-    title() {
+    /*    title() {
         // Widget title.
         return app.translator.trans('justoverclock-last-registered-users.forum.widget-title');
-    }
+    }*/
 
     content() {
         if (this.loading) {
@@ -58,7 +58,9 @@ export default class LastRegisteredUsersWidget extends Widget {
         }
         return (
             <div className="last-registered-users">
-                <p class="welcomeText">A great welcome to our newest member:</p>
+                <div class="welcomeText">
+                    <p class="welcomeText">{app.translator.trans('justoverclock-last-registered-users.forum.welcomeText') + ': '}</p>
+                </div>
                 {
                     <ul className="lastreguser fa-ul">
                         {this.lastRegisteredUsers.map((user) => {
