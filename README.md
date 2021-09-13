@@ -1,6 +1,6 @@
 # Last Registered Users
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/justoverclock/last-registered-users.svg)](https://packagist.org/packages/justoverclock/last-registered-users) [![Total Downloads](https://img.shields.io/packagist/dt/justoverclock/last-registered-users.svg)](https://packagist.org/packages/justoverclock/last-registered-users)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://poser.pugx.org/justoverclock/last-registered-users/v)](https://packagist.org/packages/justoverclock/last-registered-users) [![Total Downloads](https://poser.pugx.org/justoverclock/last-registered-users/downloads)](https://packagist.org/packages/justoverclock/last-registered-users)
 
 A [Flarum](http://flarum.org) extension. Last Registered users widget for Flarum
 
