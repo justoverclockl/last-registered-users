@@ -4,7 +4,8 @@
 
 A [Flarum](http://flarum.org) extension. Last Registered users widget for Flarum
 
-![11](https://user-images.githubusercontent.com/79002016/133002645-68e95310-8de9-4f54-aa4b-1bf36ad9c347.png)
+![Immagine 2021-09-14 172043](https://user-images.githubusercontent.com/79002016/133285903-aa332a37-cea1-46dd-81cf-87f042969043.png)
+
 
 ## IMPORTANT:
 This extension need "Search Users" permission set to "everyone" to work even for guest.
