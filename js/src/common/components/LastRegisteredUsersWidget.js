@@ -13,6 +13,7 @@ import app from 'flarum/forum/app';
 import LoadingIndicator from 'flarum/common/components/LoadingIndicator';
 import avatar from 'flarum/common/helpers/avatar';
 import Tooltip from 'flarum/common/components/Tooltip';
+import Link from "flarum/common/components/Link";
 
 export default class LastRegisteredUsersWidget extends Widget {
     oninit(vnode) {
@@ -47,11 +48,6 @@ export default class LastRegisteredUsersWidget extends Widget {
         return 'fas fa-users';
     }
 
-    /*    title() {
-        // Widget title.
-        return app.translator.trans('justoverclock-last-registered-users.forum.widget-title');
-    }*/
-
     content() {
         if (this.loading) {
             return <LoadingIndicator />;
@@ -69,9 +65,9 @@ export default class LastRegisteredUsersWidget extends Widget {
                                     <div class="lastregAvatar">
                                         <Tooltip text={user.displayName()}>{avatar(user)}</Tooltip>
                                     </div>
-                                    <a href={app.route.user(user)} class="lastreglink">
+                                    <Link href={app.route.user(user)} className="lastreglink">
                                         <strong>{user.username()}</strong>
-                                    </a>
+                                    </Link>
                                 </li>
                             );
                         })}
