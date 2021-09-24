@@ -8,7 +8,7 @@ A [Flarum](http://flarum.org) extension. Last Registered users widget for Flarum
 
 
 ## IMPORTANT:
-This extension need "Search Users" permission set to "everyone" to work even for guest.
+This extension need "Search Users" permission set to "everyone" to work even for guest due to Flarum Api limitation.
 
 
 ## Installation
