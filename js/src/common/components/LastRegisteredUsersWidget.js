@@ -55,7 +55,7 @@ export default class LastRegisteredUsersWidget extends Widget {
         return (
             <div className="last-registered-users">
                 <div class="welcomeText">
-                    <p class="welcomeText">{app.translator.trans('justoverclock-last-registered-users.forum.welcomeText') + ': '}</p>
+                    <p class="welcomeText">{app.translator.trans('justoverclock-last-registered-users.forum.welcomeTexts')}</p>
                 </div>
                 {
                     <ul className="lastreguser fa-ul">
