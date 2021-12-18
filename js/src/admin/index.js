@@ -12,12 +12,12 @@ import app from 'flarum/admin/app';
 import registerWidget from '../common/registerWidget';
 
 app.initializers.add('justoverclock/last-registered-users', () => {
-    registerWidget(app);
-    app.extensionData.for('justoverclock-last-registered-users').registerSetting({
-        setting: 'justoverclock-last-registered-users.showLastUsers',
-        name: 'justoverclock-last-registered-users.showLastUsers',
-        type: 'number',
-        label: app.translator.trans('justoverclock-last-registered-users.admin.showUsers'),
-        help: app.translator.trans('justoverclock-last-registered-users.admin.showUsers-help'),
-    });
+  registerWidget(app);
+  app.extensionData.for('justoverclock-last-registered-users').registerSetting({
+    setting: 'justoverclock-last-registered-users.showLastUsers',
+    name: 'justoverclock-last-registered-users.showLastUsers',
+    type: 'number',
+    label: app.translator.trans('justoverclock-last-registered-users.admin.showUsers'),
+    help: app.translator.trans('justoverclock-last-registered-users.admin.showUsers-help'),
+  });
 });

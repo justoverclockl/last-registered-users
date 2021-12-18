@@ -13,67 +13,67 @@ import app from 'flarum/forum/app';
 import LoadingIndicator from 'flarum/common/components/LoadingIndicator';
 import avatar from 'flarum/common/helpers/avatar';
 import Tooltip from 'flarum/common/components/Tooltip';
-import Link from "flarum/common/components/Link";
+import Link from 'flarum/common/components/Link';
 
 export default class LastRegisteredUsersWidget extends Widget {
-    oninit(vnode) {
-        super.oninit(vnode);
-        this.loading = true;
-    }
+  oninit(vnode) {
+    super.oninit(vnode);
+    this.loading = true;
+  }
 
-    oncreate(vnode) {
-        // settings to limit registered users on frontend
-        const usersToShow = app.forum.attribute('justoverclock-last-registered-users.showLastUsers') || 2;
-        // get users json
-        const RecentUsers = app.store
-            .find('users', {
-                isEmailConfirmed: false,
-                sort: '-joinedAt',
-                page: { limit: usersToShow },
-            })
-            .then((results) => {
-                this.lastRegisteredUsers = results;
-                this.loading = false;
-                m.redraw();
-            });
-    }
+  oncreate(vnode) {
+    // settings to limit registered users on frontend
+    const usersToShow = app.forum.attribute('justoverclock-last-registered-users.showLastUsers') || 2;
+    // get users json
+    const RecentUsers = app.store
+      .find('users', {
+        isEmailConfirmed: false,
+        sort: '-joinedAt',
+        page: { limit: usersToShow },
+      })
+      .then((results) => {
+        this.lastRegisteredUsers = results;
+        this.loading = false;
+        m.redraw();
+      });
+  }
 
-    className() {
-        // css class for the container
-        return 'lastRegUser-widget';
-    }
+  className() {
+    // css class for the container
+    return 'lastRegUser-widget';
+  }
 
-    icon() {
-        // Widget icon.
-        return 'fas fa-users';
-    }
+  icon() {
+    // Widget icon.
+    return 'fas fa-users';
+  }
 
-    content() {
-        if (this.loading) {
-            return <LoadingIndicator />;
+  content() {
+    if (this.loading) {
+      return <LoadingIndicator />;
+    }
+    return (
+      <div className="last-registered-users">
+        <div class="welcomeText">
+          <p class="welcomeText">{app.translator.trans('justoverclock-last-registered-users.forum.welcomeTexts')}</p>
+        </div>
+        {
+          <ul className="lastreguser fa-ul">
+            {this.lastRegisteredUsers.map((user) => {
+              return (
+                <li class="lastreguswdg">
+                  <div class="lastregAvatar">
+                    <Tooltip text={user.displayName()}>{avatar(user)}</Tooltip>
+                  </div>
+                  <Link href={app.route.user(user)} className="lastreglink">
+                    <strong>{user.username()}</strong>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         }
-        return (
-            <div className="last-registered-users">
-                <div class="welcomeText">
-                    <p class="welcomeText">{app.translator.trans('justoverclock-last-registered-users.forum.welcomeTexts')}</p>
-                </div>
-                {
-                    <ul className="lastreguser fa-ul">
-                        {this.lastRegisteredUsers.map((user) => {
-                            return (
-                                <li class="lastreguswdg">
-                                    <div class="lastregAvatar">
-                                        <Tooltip text={user.displayName()}>{avatar(user)}</Tooltip>
-                                    </div>
-                                    <Link href={app.route.user(user)} className="lastreglink">
-                                        <strong>{user.username()}</strong>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                }
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }
