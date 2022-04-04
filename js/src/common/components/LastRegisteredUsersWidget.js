@@ -13,7 +13,7 @@ import app from 'flarum/forum/app';
 import LoadingIndicator from 'flarum/common/components/LoadingIndicator';
 import avatar from 'flarum/common/helpers/avatar';
 import Tooltip from 'flarum/common/components/Tooltip';
-import Link from "flarum/common/components/Link";
+import Link from 'flarum/common/components/Link';
 
 export default class LastRegisteredUsersWidget extends Widget {
     oninit(vnode) {
@@ -52,6 +52,7 @@ export default class LastRegisteredUsersWidget extends Widget {
         if (this.loading) {
             return <LoadingIndicator />;
         }
+        const canSearchUsers = app.forum.attribute('canSearchUsers');
         return (
             <div className="last-registered-users">
                 <div class="welcomeText">

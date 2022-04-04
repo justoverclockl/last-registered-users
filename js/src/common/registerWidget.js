@@ -6,10 +6,12 @@ export default function (app) {
         .add({
             key: 'LastRegistered',
             component: LastRegisteredUsersWidget,
-            isDisabled: false,
             isUnique: true,
             placement: 'end',
             position: 1,
+            isDisabled: () => {
+                return !app.forum.attribute('canSearchUsers');
+            },
         })
         .extend(app, 'justoverclock-last-registered-users');
 }
